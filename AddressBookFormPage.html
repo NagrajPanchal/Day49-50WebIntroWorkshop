@@ -7,19 +7,29 @@
     <title>Address Book Form Page</title>
     <link rel="icon" href="..\Day49-50WebIntroWorkshop\assets\logo\BL_logo_square_jpg.jpg" type="image/icon type">
 <link rel="stylesheet" href="..\Day49-50WebIntroWorkshop\AddressBookFormPage.css">
-<script src="..\Day49-50WebIntroWorkshop\AddressBookFormPage.js"> </script>
-
-    
+<script src="..\Day49-50WebIntroWorkshop\AddressBookFormPage.js"> </script>    
 </head>
 <body>
     <header class="header-content header">
         <div class="logo-content">
             <img class="image" src="..\Day49-50WebIntroWorkshop\assets\logo\AddressBook.png" alt="">
-            <div class="span-text">
+            <div>
                 <span class="addressbook-text">ADDRESS</span><br>
                 <span class="addressbook-text book-text">BOOK</span>
             </div>
         </div>
     </header>
+    <div class="form-content">
+        <form class="form" action="#" onsubmit="save();return false">
+            <div class="form-head">
+                <h6>Person Address Form </h6>               
+                    <button class ="button" type="cancel" value="Cancel">
+                        <a href="HomePage" class="cancel-button"> 
+                        <img class="image-cancel" src="..\Day49-50WebIntroWorkshop\assets\images\Cancel.png" alt="">
+                        </a>
+                    </button>
+            </div>        
+        </form>
+    </div>
 </body>
 </html>
