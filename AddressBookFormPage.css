@@ -47,6 +47,7 @@ body{
 }
 
 .form-content {
+    padding-top: 20px;
     min-height: calc(30% - 80%);
     background: #F7F7F7 0% 0% no-repeat padding-box;
     display: flex;
@@ -57,7 +58,6 @@ body{
 
 .form {
     width: 65%;
-    padding: 50px 50px;
     justify-content: center;
     background: #FFFFFF 0% 0% ;
     box-shadow: 0px 3px 6px #00000029;
@@ -69,17 +69,24 @@ body{
 .form-head {
     color: white;
     font-family: "Verdana", sans-serif;
-    width: 65%;
-    height: 70px;
+    width: 100%;
+    height: 60px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    font: normal normal normal 28px/37px Roboto;
+    justify-content: right;
+    font: normal normal normal 20px/37px Roboto;
     letter-spacing: 0px;
     background-color: #008CFF;
     text-transform: uppercase;
     opacity: 1;
     align-items: center;
+}
+.form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right;
+    justify-content: right;
 }
 
 .button {
@@ -87,9 +94,91 @@ width: auto;
     justify-content: right;
     background-color: #008CFF;
     align-items: right;
-    margin-left: 100px;
+    margin-left: 300px;
+    margin-right: 15px;
     border-color: #008CFF;
 }
 .image-cancel{
     size: auto;
+}
+
+
+.row-content{
+    display: flex;
+    padding-left: 80px;
+    padding-right: 80px;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: left;
+    border: 0px solid #008CFF;
+}
+.lable{
+    min-width: 140px;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+.text{
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+.input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.input-wrapper {
+    padding-top: 25px;
+    position: relative;
+  }
+  
+  .in-line-name {
+    padding-top: 15px;
+    margin-top: 12px;
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+    border: 1px solid gray;
+    border-radius: 6px;
+    position: relative;
+    width: 200px;
+    margin: 10px;
+    line-height: 6ex;
+  }
+  
+  .in-line {
+    margin-top: 15px;
+    margin-left: 60px;
+    min-width: 140px;
+    position: absolute;
+    color: #008CFF;
+    top: 0.2ex;
+    z-index: 1;
+    left: 2em;
+    background-color: white;
+    padding: 0 10px;
+  }
+
+  .input-content {
+    width: 300px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.seleted-row-content{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: left;
+    border: 0px solid #008CFF;
 }
