@@ -9,6 +9,7 @@
     <link rel="icon" href="icon.jpg" type="image/icon type">
 <link rel="stylesheet" href="AddressBookFormPage.css">
 <script src="AddressBookFormPage.js"> </script>    
+<script src="AddressBook.js"> </script>    
 </head>
 <body>
     <header class="header-content header">
@@ -33,16 +34,19 @@
                 </span>                    
                 </div>
                 <div class="row-content input-wrapper">
-                    <label class="in-line" for="name">Full Name</label>
-                    <input class="input" type="text" id="name" name="name" required>
+                    <label class="in-line" for="fullName">Full Name</label>
+                    <input class="input" type="text" id="fullName" name="fullName" required>
+                    <error-output class="text-error" for="text"></error-output>
                 </div>
                 <div class="row-content">
                     <label class="label text" for="address">Address</label>
                     <textarea id="address" type="text" class="input address-text" name="Address" style="height:100px"required></textarea>
+                    <error-output class="address-error" for="address"></error-output>
                 </div>  
                 <div class="row-content">
                     <label class="lable text" for="number">Phone Number</label>
                     <input class="input" type="text" id="number" name="number" required>
+                    <error-output class="phone-error" for="text"></error-output>
                 </div>  
                 <div class="row">
                     <div class="input-content">
