@@ -56,6 +56,19 @@ const setContactObject = () => {
     contactObject._phone = getInputValueById('#phone');
     alert(contactObject.toString())
   }
+  const createAddressBook = () =>{
+    let addressbook = new Contact();
+    let names = getInputValueById('#name').split(" ");
+  addressbook._firstName = names[0];
+  addressbook._lastName = names[1];
+  addressbook._address = getInputValueById('#address');
+  addressbook._city = getInputValueById('#city');
+  addressbook._state = getInputValueById('#state');
+  addressbook._zip = getInputValueById('#zip');
+  addressbook._phone = getInputValueById('#phone');
+  alert(addressbook)
+
+}
 
   const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
