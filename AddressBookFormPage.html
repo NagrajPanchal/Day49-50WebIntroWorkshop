@@ -1,3 +1,4 @@
+<!-- Address Book Form Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Address Book Form Page</title>
-    <link rel="icon" href="..\Day49-50WebIntroWorkshop\assets\logo\BL_logo_square_jpg.jpg" type="image/icon type">
-<link rel="stylesheet" href="..\Day49-50WebIntroWorkshop\AddressBookFormPage.css">
-<script src="..\Day49-50WebIntroWorkshop\AddressBookFormPage.js"> </script>    
+    <link rel="icon" href="icon.jpg" type="image/icon type">
+<link rel="stylesheet" href="AddressBookFormPage.css">
+<script src="AddressBookFormPage.js"> </script>    
+<script src="AddressBook.js"> </script>    
 </head>
 <body>
     <header class="header-content header">
         <div class="logo-content">
-            <img class="image" src="..\Day49-50WebIntroWorkshop\assets\logo\AddressBook.png" alt="">
+            <img class="image" src="AddressBookLogo.png" alt="">
             <div>
                 <span class="addressbook-text">ADDRESS</span><br>
                 <span class="addressbook-text book-text">BOOK</span>
@@ -22,13 +24,66 @@
     <div class="form-content">
         <form class="form" action="#" onsubmit="save();return false">
             <div class="form-head">
-                <h6>Person Address Form </h6>               
+                <span>Person Address Form </span>  
+                <span class="form-button">
                     <button class ="button" type="cancel" value="Cancel">
                         <a href="HomePage" class="cancel-button"> 
-                        <img class="image-cancel" src="..\Day49-50WebIntroWorkshop\assets\images\Cancel.png" alt="">
+                        <img class="image-cancel" src="CancelSymbol.png" alt="">
                         </a>
                     </button>
-            </div>        
+                </span>                    
+                </div>
+                <div class="row-content input-wrapper">
+                    <label class="in-line" for="fullName">Full Name</label>
+                    <input class="input" type="text" id="fullName" name="fullName" required>
+                    <error-output class="text-error" for="text"></error-output>
+                </div>
+                <div class="row-content">
+                    <label class="label text" for="address">Address</label>
+                    <textarea id="address" type="text" class="input address-text" name="Address" style="height:100px"required></textarea>
+                    <error-output class="address-error" for="address"></error-output>
+                </div>  
+                <div class="row-content">
+                    <label class="lable text" for="number">Phone Number</label>
+                    <input class="input" type="text" id="number" name="number" required>
+                    <error-output class="phone-error" for="text"></error-output>
+                </div>  
+                <div class="row">
+                    <div class="input-content">
+                        <label class="label text" for="City">City</label>
+                        <div class="seleted-row-content">
+                            <select class="input" name="City" id="City">
+                                <option value="">Select City</option>
+                                <option value="Panipat">Bengalore</option>
+                                <option value="Mumbai">Bidar</option>
+                                <option value="Patna">Mumbai</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Kolkata">Delhi</option>
+                                <option value="Jaipur">Hydrabad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-content">
+                        <label class="label text" for="State">State</label>
+                        <div class="seleted-row-content">
+                            <select class="input" name="State" id="State">
+                                <option value="">Select State</option>
+                                <option value="Haryana">Karnataka</option>
+                                <option value="Rajasthan">Telengana</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="West Bengal">Andra</option>
+                                <option value="Bihar">Kerala</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-content">
+                        <label class="label text" for="ZipCode">ZipCode</label>
+                        <div class="seleted-row-content">
+                            <input class="input" type="number" id="ZipCode" name="ZipCode" placeholder="Zip Code" required>
+                        </div>
+                    </div>
+                </div>
         </form>
     </div>
 </body>
