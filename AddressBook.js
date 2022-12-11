@@ -1,16 +1,38 @@
-class EmployeePayrollData {
+class Contact{
 
-    // getter and setter method
-    get id() { return this._id;}
-    set id(id) {
-        this._id =id;
+    get id(){
+        return this._id;
     }
 
-    get fullName () { return this._fullName; }
-    set fullName(fullName) {
-        let fullNameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$')
-        if (fullNameRegex.test(fullName)) { this._fullName = fullName ;}
-        else throw 'Name is Incorrect';
+    set id(id){
+        this._id=id;
+    }
+
+    get firstName(){
+        return this._firstName;
+    }
+
+    set firstName(firstName)
+    {
+        let firstNameRegex = RegExp('^[A-Z][a-z]{2,}$')
+        if(firstNameRegex.test(firstName))
+        this._firstName = firstName;
+        else
+        throw 'First Name Invalid'
+    }
+
+    get lastName()
+    {
+        return this._lastName;
+    }
+
+    set lastName(lastName)
+    {
+        let lastNameRegex = RegExp('^[A-Z][a-z]{2,}$')
+        if(lastNameRegex.test(lastName))
+        this._lastName = lastName;
+        else
+        throw 'Last Name Invalid'
     }
 
     get address(){
@@ -38,7 +60,7 @@ class EmployeePayrollData {
     }
 
     set city(city){
-        let cityRegex = RegExp('^[A-Za-z\\s]{2,}$');
+        let cityRegex = RegExp('^[A-Za-z\\s]{4,}$');
         if(cityRegex.test(city)){
             this._city=city;
         }else{
@@ -51,7 +73,7 @@ class EmployeePayrollData {
     }
 
     set state(state){
-        let stateRegex = RegExp("^[A-Za-z\\s]{2,}$")
+        let stateRegex = RegExp("^[A-Za-z\\s]{4,}$")
         if(stateRegex.test(state)){
             this._state = state;
         }else{
@@ -66,7 +88,7 @@ class EmployeePayrollData {
 
     set zip(zip)
     {
-        let zipRegex = RegExp('^[0-9]{6,}$');
+        let zipRegex = RegExp('^[0-9]{6}$');
         if(zipRegex.test(zip))
         this._zip = zip;
         else
@@ -91,7 +113,8 @@ class EmployeePayrollData {
 
     toString()
     {
-        return "Full Name = "+this._fullName+ ", Address = "+this.address+", City = "+this.city+", State = "+this.state+", Zip = "+this.zip+", Phone = "+this.phone+", Email = "+this.email;
+        return "Id = "+this.id+", FirstName = "+this.firstName+", LastName = "+this.lastName+", Address = "+this.address+
+                ", City = "+this.city+", State = "+this.state+", Zip = "+this.zip+", Phone = "+this.phone+", Email = "+this.email;
     }
 
 }

@@ -1,52 +1,72 @@
-window.addEventListener('DOMContentLoaded',(event) => {
-    const fullName = document.querySelector('#fullName');
-    const textError = document.querySelector('.text-error');
-    fullName.addEventListener('input',function(){
-        if(fullName.value.length == 0)
-        {
-            textError.textContent = "";
-            return;
-        }
-        try{
-            (new EmployeePayrollData()).fullName = fullName.value;
-            textError.textContent = "";
-        }
-        catch (e) {
-            textError.textContent = e;           
-            }
-    });
-
-    const addressElement = document.querySelector('#address');
-    const addressError = document.querySelector('#address-error');
-    addressElement.addEventListener('input', function () {
-        let address = document.querySelector('#address').value;
-        if (addressElement.value.length == 0) {
-            addressError.textContent = '';
+let contactObject = {}
+window.addEventListener('DOMContentLoaded', (event) => {
+    const name = document.querySelector('#name');
+    const nameError = document.querySelector('.name-error');
+    name.addEventListener('input', function () {
+        let names = document.querySelector('#name').value.split(" ");
+        if (name.value.length == 0) {
+            nameError.textContent = "";
             return;
         }
         try {
-            (new Contact()).address = address;
-            addressError.textContent = '';
-            return;
+            (new Contact()).firstName = names[0];
+            (new Contact()).lastName = names[1];
+            nameError.textContent = '';
         } catch (e) {
-            addressError.textContent = e;
+            nameError.textContent = e;
         }
     });
 
+
     const phoneElement = document.querySelector('#phone');
-    const phoneError = document.querySelector('.text-error');
-    phoneElement.addEventListener('input',function(){
-        if(phone.value.length == 0)
-        {
-            phoneError.textContent = "";
-            return;
+    const phoneError = document.querySelector('.phone-error');
+    phoneElement.addEventListener('input', function () {
+        let phone = document.querySelector('#phone').value;
+
+        try {
+            (new Contact()).phone = phone;
+            phoneError.textContent = '';
+        } catch (e) {
+            phoneError.textContent = e;
         }
-        try{
-            (new EmployeePayrollData()).phone = phone.value;
-            phoneError.textContent = "";
-        }
-        catch (e) {
-            phoneError.textContent = e;           
-            }
     });
-});
+
+
+})
+
+const save = (event)=>{
+
+  try{
+    setContactObject();
+  }catch(e){
+    console.log(e);
+    return;
+  }
+}
+
+const setContactObject = () => {
+    let contactObject = new Contact()
+    let names = getInputValueById('#name').split(" ");
+    contactObject._firstName = names[0];
+    contactObject._lastName = names[1];
+    contactObject._address = getInputValueById('#address');
+    contactObject._city = getInputValueById('#city');
+    contactObject._state = getInputValueById('#state');
+    contactObject._zip = getInputValueById('#zip');
+    contactObject._phone = getInputValueById('#phone');
+    alert(contactObject.toString())
+  }
+
+  const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+  }
+
+  const resetForm = () => {
+    setValue('#name','');
+    setValue('#address','');
+    setValue('#city','Select City');
+    setValue('#state','Select State');
+    setValue('#zip','');
+    setValue('#phone','');
+}

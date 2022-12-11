@@ -23,31 +23,24 @@
     </header>
     <div class="form-content">
         <form class="form" action="#" onsubmit="save();return false">
-            <div class="form-head">
-                <span>Person Address Form </span>  
-                <span class="form-button">
-                    <button class ="button" type="cancel" value="Cancel">
-                        <a href="HomePage" class="cancel-button"> 
-                        <img class="image-cancel" src="CancelSymbol.png" alt="">
-                        </a>
-                    </button>
-                </span>                    
+            <div class="form-head-content">
+                <div class="form-head">Person Address Form</div>
+                <div class="form-logo-content">
+                    <a href="./home.html"
+                    ><img src="CancelSymbol.png" alt="" height="30px" 
+                    /></a>
                 </div>
+            </div>
                 <div class="row-content input-wrapper">
-                    <label class="in-line" for="fullName">Full Name</label>
-                    <input class="input" type="text" id="fullName" name="fullName" required>
-                    <error-output class="text-error" for="text"></error-output>
+                    <label class="in-line" for="name">Full Name</label>
+                    <input class="input" type="text" id="name" name="name" required>
+                    <error-output class="name-error" for="text"></error-output>
                 </div>
                 <div class="row-content">
                     <label class="label text" for="address">Address</label>
                     <textarea id="address" type="text" class="input address-text" name="Address" style="height:100px"required></textarea>
                     <error-output class="address-error" for="address"></error-output>
-                </div>  
-                <div class="row-content">
-                    <label class="lable text" for="number">Phone Number</label>
-                    <input class="input" type="text" id="number" name="number" required>
-                    <error-output class="phone-error" for="text"></error-output>
-                </div>  
+                </div>   
                 <div class="row">
                     <div class="input-content">
                         <label class="label text" for="City">City</label>
@@ -83,6 +76,15 @@
                             <input class="input" type="number" id="ZipCode" name="ZipCode" placeholder="Zip Code" required>
                         </div>
                     </div>
+                </div>
+                <div class="row-content">
+                    <label class="lable text" for="phone">Phone Number</label>
+                    <input class="input" type="text" id="phone" name="phone" required>
+                    <error-output class="phone-error" for="text"></error-output>
+                </div> 
+                <div class="add-reset">
+                    <button type="submit" class="btn addButton" id="addButton">Add</button>
+                    <button type="button" onclick="resetForm()" class="resetButton btn">Reset</button>
                 </div>
         </form>
     </div>
